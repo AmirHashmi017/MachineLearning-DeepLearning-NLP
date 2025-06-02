@@ -1,0 +1,22 @@
+# Ignore Python virtual environments
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+.env/
+
+# Bytecode files
+__pycache__/
+*.pyc
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings (optional)
+.vscode/
