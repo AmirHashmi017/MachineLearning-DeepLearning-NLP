@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Amir Hashmi",
+      "email": "amir@example.com",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "name": "Hadi Hassan",
+      "email": "hadi@example.com",
+      "is_active": false
+    }
+  ]
+}
