@@ -1,0 +1,7 @@
+2025/06/12 17:59:41-root-INFO-Just an Information
+2025/06/12 17:59:41-root-DEBUG-Program is working
+2025/06/12 17:59:41-root-WARNING-This is warning
+2025/06/12 17:59:41-root-ERROR-Error Log
+2025/06/12 17:59:41-root-CRITICAL-Critical Error
+2025/06/12 17:59:41-Module1-DEBUG-Logger 1 Debugging
+2025/06/12 17:59:41-Module2-ERROR- Logger2 error

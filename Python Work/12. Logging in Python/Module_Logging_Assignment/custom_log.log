@@ -1,0 +1,10 @@
+2025-06-12 18:47:12,012--Custom Logger--DEBUG--Hey this is debug log
+2025-06-12 18:47:12,014--Custom Logger--INFO--Hey this is info log
+2025-06-12 18:47:12,016--Custom Logger--WARNING--Hey this is warning log
+2025-06-12 18:47:12,019--Custom Logger--ERROR--Hey this is error log
+2025-06-12 18:47:12,021--Custom Logger--CRITICAL--Hey this is critical log
+2025-06-12 19:37:11,581--Custom Logger--DEBUG--Hey this is debug log
+2025-06-12 19:37:11,584--Custom Logger--INFO--Hey this is info log
+2025-06-12 19:37:11,586--Custom Logger--WARNING--Hey this is warning log
+2025-06-12 19:37:11,588--Custom Logger--ERROR--Hey this is error log
+2025-06-12 19:37:11,594--Custom Logger--CRITICAL--Hey this is critical log

@@ -1,0 +1,8 @@
+2025-06-12 20:51:26,995-__main__-INFO-Main Module Started
+2025-06-12 20:51:26,996-module_a-INFO-Module A function started
+2025-06-12 20:51:26,998-module_a-DEBUG-This is a debug message from Module A
+2025-06-12 20:51:26,999-module_a-INFO-Module A function finished
+2025-06-12 20:51:27,000-module_b-INFO-Module B function started
+2025-06-12 20:51:27,001-module_b-DEBUG-This is a debug message from Module B
+2025-06-12 20:51:27,002-module_b-INFO-Module B function finished
+2025-06-12 20:51:27,004-__main__-INFO-Main Module Ended

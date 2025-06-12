@@ -1,0 +1,5 @@
+2025-06-12 19:37:24,451-Context Logger-DEBUG-Hey this is debug log- Function Name: test_log- Line Number: 11 - User ID: user123- Session ID: session456
+2025-06-12 19:37:24,451-Context Logger-INFO-Hey this is info log- Function Name: test_log- Line Number: 12 - User ID: user123- Session ID: session456
+2025-06-12 19:37:24,452-Context Logger-WARNING-Hey this is warning log- Function Name: test_log- Line Number: 13 - User ID: user123- Session ID: session456
+2025-06-12 19:37:24,452-Context Logger-ERROR-Hey this is error log- Function Name: test_log- Line Number: 14 - User ID: user123- Session ID: session456
+2025-06-12 19:37:24,454-Context Logger-CRITICAL-Hey this is critical log- Function Name: test_log- Line Number: 15 - User ID: user123- Session ID: session456

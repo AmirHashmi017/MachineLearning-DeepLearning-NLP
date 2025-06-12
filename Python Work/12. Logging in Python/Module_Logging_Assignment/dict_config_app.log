@@ -1,0 +1,5 @@
+2025-06-12 20:33:23,887-root-DEBUG-This is a debug message-configure_with_dict-39
+2025-06-12 20:33:23,891-root-INFO-This is an info message-configure_with_dict-40
+2025-06-12 20:33:23,893-root-WARNING-This is a warning message-configure_with_dict-41
+2025-06-12 20:33:23,896-root-ERROR-This is an error message-configure_with_dict-42
+2025-06-12 20:33:23,898-root-CRITICAL-This is a critical message-configure_with_dict-43

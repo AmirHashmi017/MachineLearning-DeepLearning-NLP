@@ -1,0 +1,12 @@
+2025-06-12 19:07:39,455 - exception_logger - ERROR - division by zero
+Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Local\Temp\ipykernel_3920\134294203.py", line 12, in log_exception
+    1 / 0
+    ~~^~~
+ZeroDivisionError: division by zero
+2025-06-12 19:37:18,242 - exception_logger - ERROR - division by zero
+Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Local\Temp\ipykernel_13528\134294203.py", line 12, in log_exception
+    1 / 0
+    ~~^~~
+ZeroDivisionError: division by zero
