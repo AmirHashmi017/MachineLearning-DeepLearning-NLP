@@ -1,0 +1,70 @@
+.Title{
+    color:brown;
+    font-size:40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+form
+{
+    margin-top: 50px;
+    display: flex;
+    column-gap:30px;
+    align-items: center;
+    justify-content: center;
+}
+label{
+    font-size: 25px;
+    color:brown;
+    font-weight: bold;
+}
+input{
+    width:15vw;
+    height:2vw;
+}
+.list
+{
+    width:40vw;
+    margin-top: 10vh;
+    margin-inline:auto;
+}
+ul{
+    list-style: none;
+    display:flex;
+    column-gap: 30px;
+    font-size: 25px;
+    align-items: center;
+}
+.listheader
+{
+    font-weight: bold;
+    color:brown;
+}
+#delete
+{
+    background-color: red;
+    width:7vw;
+    height:3vw;
+    border-radius: 8%;
+    border:none;
+    color:white;
+    cursor: pointer;
+}
+#delete:hover
+{
+    background-color: rgb(124, 53, 53);
+}
+#add
+{
+    background-color: green;
+    width:7vw;
+    height:3vw;
+    border-radius: 8%;
+    border:none;
+    color:white;
+    cursor: pointer;
+}
+#add:hover
+{
+    background-color: rgb(74, 146, 74);
+}
