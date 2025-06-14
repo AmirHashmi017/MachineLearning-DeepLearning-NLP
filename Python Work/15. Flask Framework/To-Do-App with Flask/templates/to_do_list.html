@@ -11,7 +11,7 @@
 
 <body>
     <h1 class="Title">To-Do List</h1>
-    <div class="form">
+    <div action="/" class="form">
         <form id="addform" method="post">
             <label for="name">Task Name: </label>
             <input type="text" id="name" name="name" required="True">
@@ -26,11 +26,19 @@
             <li>Name</li>
             <li>Description</li>
         </ul>
-        <ul>
-            <li>1</li>
-            <li>Task 1</li>
-            <li>This is first Task</li>
-            <li><button id="delete">Delete</button></li>
+        <ul class="mainul">
+            {%for task in tasks%}
+            <ul class="data">
+            <li>{{task.Id}}</li>
+            <li>{{task.Name}}</li>
+            <li>{{task.Description}}</li>
+            <form method="POST" action="/">
+            <input type="hidden" name="task_id" value="{{ task.Id }}">
+            <button type="submit" id="delete">Delete</button>
+        </form>
+            </ul>
+            {%endfor%}
+            
         </ul>
     </div>
 </body>

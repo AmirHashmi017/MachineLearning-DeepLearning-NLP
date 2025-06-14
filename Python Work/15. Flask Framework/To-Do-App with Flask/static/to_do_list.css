@@ -1,3 +1,7 @@
+body
+{
+    overflow-x: hidden !important;
+}
 .Title{
     color:brown;
     font-size:40px;
@@ -24,9 +28,10 @@ input{
 }
 .list
 {
-    width:40vw;
+    width:100vw;
     margin-top: 10vh;
     margin-inline:auto;
+    
 }
 ul{
     list-style: none;
@@ -39,9 +44,14 @@ ul{
 {
     font-weight: bold;
     color:brown;
+    width:80vw;
+    position: relative;
+    left:20vw;
 }
 #delete
 {
+    position: relative;
+    top:-25px;
     background-color: red;
     width:7vw;
     height:3vw;
@@ -67,4 +77,21 @@ ul{
 #add:hover
 {
     background-color: rgb(74, 146, 74);
+}
+li{
+    width:15vw;
+    display: flex;
+    /* justify-content: center; */
+}
+.data
+{
+    display: flex;
+    justify-content: center;
+}
+.mainul
+{
+    display: flex;
+    flex-direction: column;
+    row-gap:20px;
+    
 }

@@ -1,12 +1,17 @@
-from flask import Flask,render_template,request,jsonify
-import sqlite3
+from flask import Flask,render_template,request,jsonify,redirect,url_for
+import sqlite3,json,requests
 app=Flask(__name__)
 
 # Now Defining RESTfull APIs
-# GET API to get list of tasks
-@app.route("/")
+
+@app.route("/",methods=['GET','POST'])
 def welcome():
-    return render_template("to_do_list.html")
+    if(request.method=="POST"):
+        id=request.form['task_id']
+        response=requests.delete(f"http://127.0.0.1:5000/tasks/{id}")
+    response=get_tasks()
+    tasks_dict=response.get_json()
+    return render_template("to_do_list.html",tasks=tasks_dict)
 
 @app.route("/tasks",methods=["GET"])
 def get_tasks():
@@ -27,6 +32,9 @@ def get_tasks_by_id(id):
     connection.close()
     tasks=[{'Id':row[0],'Name':row[1],'Description':row[2]} for row in data]
     return jsonify(tasks)
+
+
+
 
 @app.route("/tasks",methods=["POST"])
 def Add_Task():

@@ -18,4 +18,5 @@ document.getElementById("addform").addEventListener("submit",function(e){
             console.error("Error sending task:", error);
         });
     }
+    location.reload()
 })
