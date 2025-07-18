@@ -30,7 +30,7 @@ def predict_api():
 
     new_data_scaled = standard_scaler.transform([[Temperature, RH, Ws, Rain, FFMC, DMC, ISI, Classes, Region]])
     result = ridge_model.predict(new_data_scaled)
-    return jsonify({'prediction': float(result[0])})
+    return jsonify({'prediction': float(f"{result[0]:.2f}")})
 
 
 if __name__=="__main__":
