@@ -10,30 +10,27 @@ standard_scaler=pickle.load(open('models/scaler.pkl','rb'))
 application =Flask(__name__)
 app= application
 
-@app.route("/")
-def index():
+@app.route("/", methods=['GET'])
+def home():
     return render_template("index.html")
 
-@app.route("/predictdata",methods=['GET','POST'])
-def predict_datapoint():
-    if request.method=="POST":
-        Temperature=float(request.form.get('Temperature'))
-        RH = float(request.form.get('RH'))
-        Ws = float(request.form.get('Ws'))
-        Rain = float(request.form.get('Rain'))
-        FFMC = float(request.form.get('FFMC'))
-        DMC = float(request.form.get('DMC'))
-        ISI = float(request.form.get('ISI'))
-        Classes = float(request.form.get('Classes'))
-        Region = float(request.form.get('Region'))
 
-        # Standard Scaling of input
-        new_data_scaled=standard_scaler.transform([[Temperature,RH,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
-        result=ridge_model.predict(new_data_scaled)
+@app.route("/predict", methods=['POST'])
+def predict_api():
+    data = request.get_json()
+    Temperature = float(data.get('Temperature'))
+    RH = float(data.get('RH'))
+    Ws = float(data.get('Ws'))
+    Rain = float(data.get('Rain'))
+    FFMC = float(data.get('FFMC'))
+    DMC = float(data.get('DMC'))
+    ISI = float(data.get('ISI'))
+    Classes = 1
+    Region = 0
 
-        return render_template("home.html",results=result[0])
-    else:
-        return render_template("home.html")
+    new_data_scaled = standard_scaler.transform([[Temperature, RH, Ws, Rain, FFMC, DMC, ISI, Classes, Region]])
+    result = ridge_model.predict(new_data_scaled)
+    return jsonify({'prediction': float(result[0])})
 
 
 if __name__=="__main__":

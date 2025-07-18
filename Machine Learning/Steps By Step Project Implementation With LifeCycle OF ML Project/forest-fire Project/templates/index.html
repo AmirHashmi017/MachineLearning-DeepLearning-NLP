@@ -1,1 +1,437 @@
-<h1>Welcome to the Homepage</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Weather Index Predictor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .fire-icon {
+            color: #e74c3c;
+            font-size: 1.2em;
+            animation: flicker 2s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group .tooltip {
+            position: absolute;
+            top: -5px;
+            right: 10px;
+            background: #34495e;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .form-group input:focus + .tooltip {
+            opacity: 1;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .predict-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .predict-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        .predict-btn:active {
+            transform: translateY(0);
+        }
+
+        .result-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-container h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .result-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .result-description {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .info-panel {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-panel h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-panel li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .info-panel li:before {
+            content: "•";
+            color: #667eea;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <i class="fas fa-fire fire-icon"></i>
+                Forest Fire Weather Index Predictor
+                <i class="fas fa-fire fire-icon"></i>
+            </h1>
+            <p>Predict forest fire weather conditions using advanced machine learning algorithms</p>
+        </div>
+
+        <form method="POST" action="/" id="predictionForm">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="Temperature"><i class="fas fa-thermometer-half"></i> Temperature (°C)</label>
+                    <input type="number" step="0.1" name="Temperature" id="Temperature" placeholder="e.g., 25.5" required>
+                    <div class="tooltip">Temperature in Celsius</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="RH"><i class="fas fa-tint"></i> Relative Humidity (%)</label>
+                    <input type="number" step="0.1" name="RH" id="RH" placeholder="e.g., 45.2" required>
+                    <div class="tooltip">Relative Humidity percentage</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Ws"><i class="fas fa-wind"></i> Wind Speed (km/h)</label>
+                    <input type="number" step="0.1" name="Ws" id="Ws" placeholder="e.g., 12.1" required>
+                    <div class="tooltip">Wind Speed in km/h</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Rain"><i class="fas fa-cloud-rain"></i> Rain (mm)</label>
+                    <input type="number" step="0.1" name="Rain" id="Rain" placeholder="e.g., 0.0" required>
+                    <div class="tooltip">Rainfall in millimeters</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="FFMC"><i class="fas fa-leaf"></i> FFMC</label>
+                    <input type="number" step="0.1" name="FFMC" id="FFMC" placeholder="e.g., 85.5" required>
+                    <div class="tooltip">Fine Fuel Moisture Code</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="DMC"><i class="fas fa-seedling"></i> DMC</label>
+                    <input type="number" step="0.1" name="DMC" id="DMC" placeholder="e.g., 15.2" required>
+                    <div class="tooltip">Duff Moisture Code</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ISI"><i class="fas fa-fire-flame-curved"></i> ISI</label>
+                    <input type="number" step="0.1" name="ISI" id="ISI" placeholder="e.g., 8.5" required>
+                    <div class="tooltip">Initial Spread Index</div>
+                </div>
+
+            </div>
+
+            <div class="btn-container">
+                <button type="submit" class="predict-btn">
+                    <i class="fas fa-calculator"></i>
+                    Predict Fire Weather Index
+                </button>
+            </div>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Calculating prediction...</p>
+        </div>
+
+        <div id="result-area"></div>
+
+        <div class="info-panel">
+            <h3>
+                <i class="fas fa-info-circle"></i>
+                About Fire Weather Index
+            </h3>
+            <ul>
+                <li><strong>FWI</strong> - A numerical rating system that estimates fire danger based on weather conditions</li>
+                <li><strong>FFMC</strong> - Fine Fuel Moisture Code indicates the moisture content of surface litter</li>
+                <li><strong>DMC</strong> - Duff Moisture Code represents moisture content of decomposing organic matter</li>
+                <li><strong>ISI</strong> - Initial Spread Index combines wind speed and FFMC to indicate fire spread rate</li>
+                <li>Higher values generally indicate greater fire danger and potential for rapid spread</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('loading').style.display = 'block';
+            document.querySelector('.predict-btn').disabled = true;
+            document.querySelector('.predict-btn').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Predicting...';
+
+            const data = {
+                Temperature: document.getElementById('Temperature').value,
+                RH: document.getElementById('RH').value,
+                Ws: document.getElementById('Ws').value,
+                Rain: document.getElementById('Rain').value,
+                FFMC: document.getElementById('FFMC').value,
+                DMC: document.getElementById('DMC').value,
+                ISI: document.getElementById('ISI').value
+            };
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                document.getElementById('loading').style.display = 'none';
+                document.querySelector('.predict-btn').disabled = false;
+                document.querySelector('.predict-btn').innerHTML = '<i class="fas fa-calculator"></i> Predict Fire Weather Index';
+                document.getElementById('result-area').innerHTML = `
+                    <div class="result-container">
+                        <h2><i class="fas fa-chart-line"></i> Prediction Result</h2>
+                        <div class="result-value">${result.prediction}</div>
+                        <div class="result-description">Fire Weather Index Value</div>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                document.querySelector('.predict-btn').disabled = false;
+                document.querySelector('.predict-btn').innerHTML = '<i class="fas fa-calculator"></i> Predict Fire Weather Index';
+                document.getElementById('result-area').innerHTML = `<div class="result-container">Error: ${error}</div>`;
+            });
+        });
+
+        // Add sample data button functionality
+        function fillSampleData() {
+            document.getElementById('Temperature').value = '25.5';
+            document.getElementById('RH').value = '45.2';
+            document.getElementById('Ws').value = '12.1';
+            document.getElementById('Rain').value = '0.0';
+            document.getElementById('FFMC').value = '85.5';
+            document.getElementById('DMC').value = '15.2';
+            document.getElementById('ISI').value = '8.5';
+            document.getElementById('Classes').value = '1';
+            document.getElementById('Region').value = '2';
+        }
+
+        // Add sample data button
+        const btnContainer = document.querySelector('.btn-container');
+        const sampleBtn = document.createElement('button');
+        sampleBtn.type = 'button';
+        sampleBtn.className = 'predict-btn';
+        sampleBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+        sampleBtn.style.marginLeft = '10px';
+        sampleBtn.innerHTML = '<i class="fas fa-flask"></i> Fill Sample Data';
+        sampleBtn.onclick = fillSampleData;
+        btnContainer.appendChild(sampleBtn);
+    </script>
+</body>
+</html>
