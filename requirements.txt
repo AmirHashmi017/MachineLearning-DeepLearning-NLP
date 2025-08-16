@@ -18,3 +18,5 @@ plotly
 xgboost
 kneed
 redis
+catboost
+dill
