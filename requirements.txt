@@ -20,3 +20,12 @@ kneed
 redis
 catboost
 dill
+python-dotenv
+pymongo
+certifi
+pyaml
+mlflow
+dagshub
+fastapi
+uvicorn
+python-multipart
