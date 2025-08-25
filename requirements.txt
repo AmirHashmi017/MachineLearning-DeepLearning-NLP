@@ -24,7 +24,7 @@ python-dotenv
 pymongo
 certifi
 pyaml
-mlflow
+mlflow==2.5.0
 dagshub
 fastapi
 uvicorn
