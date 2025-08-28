@@ -31,3 +31,4 @@ uvicorn
 python-multipart
 dvc
 bentoml
+nltk
