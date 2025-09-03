@@ -34,3 +34,4 @@ bentoml
 nltk
 gensim
 tqdm
+BeautifulSoup
