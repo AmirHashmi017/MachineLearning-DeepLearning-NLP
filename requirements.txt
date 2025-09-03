@@ -33,3 +33,4 @@ dvc
 bentoml
 nltk
 gensim
+tqdm
