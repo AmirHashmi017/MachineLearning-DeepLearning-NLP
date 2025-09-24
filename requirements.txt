@@ -34,3 +34,5 @@ bentoml
 nltk
 gensim
 tqdm
+tensorflow
+tensorboard
