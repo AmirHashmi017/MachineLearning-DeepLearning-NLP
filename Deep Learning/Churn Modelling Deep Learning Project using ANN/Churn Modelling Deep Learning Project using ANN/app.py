@@ -7,7 +7,7 @@ import pickle
 from tensorflow.keras.models import load_model
 
 # Loading the trained model, scaler, one hot and label encoder
-model=load_model('model.h5')
+model = load_model('model.h5', compile=False)
 
 with open("label_encoder_gender.pkl",'rb') as file:
     label_encoder_gender=pickle.load(file)
