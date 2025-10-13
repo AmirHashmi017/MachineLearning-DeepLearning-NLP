@@ -7,13 +7,12 @@ Welcome to my **Machine Learning, Deep Learning, and NLP Bootcamp portfolio repo
 ---
 
 ## 🚀 Highlights
-- Strong Python fundamentals: OOP, exception handling, file I/O, data structures
-- Advanced ML algorithms: Regression, Classification, Ensemble Methods, SVM, Gradient Boosting using ScikitLearn
-- Unsupervised Learning & Clustering: K-Means, DBSCAN, Hierarchical, Anomaly Detection
-- Deep Learning Architectures: ANN, CNN, RNN, LSTM, GRU, Transformers, Attention Mechanisms using TensorFlow
-- NLP Techniques: Tokenization, Lemmatization, Stemming, POS Tagging, NER, Bag of Words, TF-IDF, Word2Vec
-- End-to-end project experience: Data preprocessing → Modeling → Evaluation → Deployment
-- Deployment & MLOps: AWS (Elastic Beanstalk, ECS, ECR), CI/CD pipelines, Docker, MLflow, DVC, Dagshub
+- **Advanced ML algorithms**: Regression, Classification, Ensemble Methods, SVM, Gradient Boosting using ScikitLearn
+- **Unsupervised Learning & Clustering**: K-Means, DBSCAN, Hierarchical, Anomaly Detection
+- **Deep Learning Architectures**: ANN, CNN, RNN, LSTM, GRU, Transformers, Attention Mechanisms using TensorFlow
+- **NLP Techniques**: Tokenization, Lemmatization, Stemming, POS Tagging, NER, Bag of Words, TF-IDF, Word2Vec
+- **End-to-end project experience**: Data preprocessing → Modeling → Evaluation → Deployment
+- **Deployment & MLOps**: AWS (Elastic Beanstalk, ECS, ECR), CI/CD pipelines, Docker, MLflow, DVC, Dagshub
 
 ---
 
@@ -32,8 +31,8 @@ Welcome to my **Machine Learning, Deep Learning, and NLP Bootcamp portfolio repo
 ## 📊 Machine Learning
 
 ### Supervised Learning
-- Regression: Linear, Logistic, Ridge, Lasso, Elastic Net  
-- Classification: Naive Bayes, KNN, Decision Trees, Random Forest, AdaBoost, XGBoost, CatBoost, SVM, Gradient Boosting  
+- **Regression**: Linear, Logistic, Ridge, Lasso, Elastic Net  
+- **Classification**: Naive Bayes, KNN, Decision Trees, Random Forest, AdaBoost, XGBoost, CatBoost, SVM, Gradient Boosting  
 
 ### Unsupervised Learning
 - Clustering: K-Means, Hierarchical, DBSCAN  
