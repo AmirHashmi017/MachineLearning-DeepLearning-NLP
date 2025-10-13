@@ -14,17 +14,7 @@ Welcome to my **Machine Learning, Deep Learning, and NLP Bootcamp portfolio repo
 - **End-to-end project experience**: Data preprocessing → Modeling → Evaluation → Deployment
 - **Deployment & MLOps**: AWS (Elastic Beanstalk, ECS, ECR), CI/CD pipelines, Docker, MLflow, DVC, Dagshub
 
----
-
-
----
-
-## 🐍 Python Fundamentals
-- Conditional statements (`if`, `else`, `elif`)  
-- Loops (`for`, `while`) & control flow (`break`, `continue`)  
-- Functions & scope, OOP concepts (classes, objects, inheritance, polymorphism)  
-- File handling & exception management  
-- Libraries: NumPy, Pandas, Matplotlib, Seaborn, SQLite, Flask, Streamlit, FastAPI  
+--- 
 
 ---
 
@@ -78,7 +68,8 @@ Welcome to my **Machine Learning, Deep Learning, and NLP Bootcamp portfolio repo
 - **CI/CD Pipelines:** Automating model building, testing, and deployment  
 
 ---
- 
+## Libraries: 
+TensorFlow, scikit-learn, NLTK, FastAPI, Pandas, NumPy, Matplotlib, Seaborn, SQLite, Flask, Streamlit
 
 It’s **designed to showcase my readiness for professional data science and AI roles**.
 
