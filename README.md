@@ -68,8 +68,11 @@ Welcome to my **Machine Learning, Deep Learning, and NLP Bootcamp portfolio repo
 - **CI/CD Pipelines:** Automating model building, testing, and deployment  
 
 ---
+
 ## Libraries: 
 TensorFlow, scikit-learn, NLTK, FastAPI, Pandas, NumPy, Matplotlib, Seaborn, SQLite, Flask, Streamlit
+
+---
 
 It’s **designed to showcase my readiness for professional data science and AI roles**.
 
