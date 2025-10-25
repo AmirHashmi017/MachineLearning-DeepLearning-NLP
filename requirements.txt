@@ -36,4 +36,4 @@ gensim
 tqdm
 tensorflow
 tensorboard
-scikeras
+scikeras 
